@@ -46,6 +46,40 @@ Conservez bien cette URL car vous en aurez besoin par la suite.
 Pour information : IL n'y a rien dans votre navigateur et c'est normal car il s'agit d'une API AWS (Pas un développement Web type UX).
 
 ---------------------------------------------------
-Capitalisation
+Séquence 3 : Exercice
 ---------------------------------------------------
-Vous avez apris au travers de cet atelier comment installer LocalStack dans un environnement Codespace avec Github.
+Objectif : Customisez un image Docker avec Packer et déploiement sur K3d via Ansible
+Difficulté : Moyen/Difficile (~2h)
+---------------------------------------------------  
+Votre mission (si vous l'acceptez) : Concevoir une architecture **API-driven** dans laquelle une requête HTTP déclenche, via **API Gateway** et une **fonction Lambda**, lancera ou stopera une **instance EC2** déposée dans **environnement AWS simulé avec LocalStack** et qui sera exécuté dans **GitHub Codespaces**. [Option] Remplacez l'instance EC2 par l'arrêt ou le lancement d'un Docker.  
+
+**Architecture cible :** Ci-dessous, l'architecture cible souhaitée.   
+  
+![Screenshot Actions](API_Driven.png)   
+  
+---------------------------------------------------  
+## Processus de travail (résumé)
+
+1. Installation du cluster Kubernetes K3d (Séquence 1)
+2. Installation de Packer et Ansible
+3. Build de l'image customisée (Nginx + index.html)
+4. Import de l'image dans K3d
+5. Déploiement du service dans K3d via Ansible
+6. Ouverture des ports et vérification du fonctionnement
+
+---------------------------------------------------
+Séquence 4 : Documentation  
+Difficulté : Facile (~30 minutes)
+---------------------------------------------------
+**Complétez et documentez ce fichier README.md** pour nous expliquer comment utiliser votre solution.  
+Faites preuve de pédagogie et soyez clair dans vos expliquations et processus de travail.  
+   
+---------------------------------------------------
+Evaluation
+---------------------------------------------------
+Cet atelier, **noté sur 20 points**, est évalué sur la base du barème suivant :  
+- Repository exécutable sans erreur majeure (4 points)
+- Fonctionnement conforme au scénario annoncé (4 points)
+- Degré d'automatisation du projet (utilisation de Makefile ? script ? ...) (4 points)
+- Qualité du Readme (lisibilité, erreur, ...) (4 points)
+- Processus travail (quantité de commits, cohérence globale, interventions externes, ...) (4 points) 
